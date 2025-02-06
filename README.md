@@ -14,7 +14,8 @@ This project showcases a variety of basic Flutter widgets, including:
 
 Here is a screenshot of the app : 
 
-![image](https://github.com/user-attachments/assets/d5e1aeae-e750-456b-8888-fdc30357d234)
+![image](https://github.com/user-attachments/assets/595af6e4-d94d-4798-876b-cf67d563be77)
+
 
 
 
