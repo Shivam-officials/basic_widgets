@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 const url =
-    'https://tripxl.com/blog/wp-content/uploads/2024/08/Darjeeling-Cover-Photo-3-840x425.jpg';
+    'https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2024/01/11201317/Kashmir-Deepanshu-Nayak.jpg';
 const descreption =
     '''Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lectus augue, vulputate eget accumsan quis, pulvinar vitae urna. Phasellus turpis ipsum, faucibus nec tincidunt sit amet, posuere sed lorem. Cras dapibus velit ut tempus congue. Nam non luctus ipsum, quis porttitor orci. Etiam euismod mauris non orci condimentum pretium. Praesent in 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lectus augue, vulputate eget accumsan quis, pulvinar vitae urna. Phasellus turpis ipsum, faucibus nec tincidunt sit amet, posuere sed lorem. Cras dapibus velit ut tempus congue. Nam non luctus ipsum, quis porttitor orci. Etiam euismod mauris non orci condimentum pretium. Praesent in 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lectus augue, vulputate eget accumsan quis, pulvinar vitae urna. Phasellus turpis ipsum, faucibus nec tincidunt sit amet, posuere sed lorem. Cras dapibus velit ut tempus congue. Nam non luctus ipsum, quis porttitor orci. Etiam euismod mauris non orci condimentum pretium. Praesent in ''';
 
@@ -157,7 +157,7 @@ Widget _showImage() {
           child: Text(
             "Kashmir Ki Vadia",
             style: TextStyle(
-                fontSize: 25, color: Colors.pink, fontWeight: FontWeight.bold),
+                fontSize: 25, color: Colors.pinkAccent, fontWeight: FontWeight.bold),
             // textAlign: TextAlign.center,
           ),
         )),
@@ -171,7 +171,7 @@ Widget _showImage() {
               icon: Icon(
                 Icons.favorite,
                 size: 40,
-                color: Colors.pink,
+                color: Colors.pinkAccent,
               ),
             ),
           ),
