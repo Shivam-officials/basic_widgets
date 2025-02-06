@@ -1,125 +1,203 @@
 import 'package:flutter/material.dart';
 
+const url =
+    'https://tripxl.com/blog/wp-content/uploads/2024/08/Darjeeling-Cover-Photo-3-840x425.jpg';
+const descreption =
+    '''Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lectus augue, vulputate eget accumsan quis, pulvinar vitae urna. Phasellus turpis ipsum, faucibus nec tincidunt sit amet, posuere sed lorem. Cras dapibus velit ut tempus congue. Nam non luctus ipsum, quis porttitor orci. Etiam euismod mauris non orci condimentum pretium. Praesent in 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lectus augue, vulputate eget accumsan quis, pulvinar vitae urna. Phasellus turpis ipsum, faucibus nec tincidunt sit amet, posuere sed lorem. Cras dapibus velit ut tempus congue. Nam non luctus ipsum, quis porttitor orci. Etiam euismod mauris non orci condimentum pretium. Praesent in 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lectus augue, vulputate eget accumsan quis, pulvinar vitae urna. Phasellus turpis ipsum, faucibus nec tincidunt sit amet, posuere sed lorem. Cras dapibus velit ut tempus congue. Nam non luctus ipsum, quis porttitor orci. Etiam euismod mauris non orci condimentum pretium. Praesent in ''';
+
+class IconDescription {
+  IconData iconName;
+  String description;
+
+  IconDescription(this.iconName, this.description);
+}
+
+List<IconDescription> iconList = [
+  IconDescription(Icons.call, 'CALL'),
+  IconDescription(Icons.navigation, 'ROUTE'),
+  IconDescription(Icons.share, 'SHARE'),
+];
+
+// * entry point of our app
 void main() {
-  runApp(const MyApp());
+  // runs the main widget which holds the app
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+  /** This is the constructor of the MyApp class.
+      The const keyword means this widget can be created as a compile-time constant, which improves performance by reducing widget rebuilds.
+      { super.key, } is an optional named parameter that passes a Key to the superclass (StatelessWidget).
+      super.key helps Flutter track widget changes efficiently.
+   */
+  const MyApp({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+    return MaterialApp(debugShowCheckedModeBanner: false, home: HomePage());
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
+      // appBar: AppBar(
+      //   title: Text(
+      //     "Assignment Design",
+      //     textDirection: TextDirection.ltr,
+      //   ),
+      //   backgroundColor: Colors.indigoAccent,
+      // ),
+      body: SingleChildScrollView(
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+          children: [
+            _showImage(),
+
+            //address part
+            _addressPart(),
+
+            _iconRow(),
+
+            _placeDecreption()
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+}
+
+Widget _placeDecreption() {
+  return Padding(
+    padding: const EdgeInsets.all(32.0),
+    child: Text(
+      descreption,
+      style: TextStyle(
+        fontSize: 14,
+      ),
+      textAlign: TextAlign.justify,
+    ),
+  );
+}
+
+Widget _iconRow() {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    children: [
+      iconWithDescription(
+          iconName: Icons.call, description: 'CALL', onPressed: () {}),
+      iconWithDescription(
+          iconName: Icons.navigation, description: 'ROUTE', onPressed: () {}),
+      iconWithDescription(
+          iconName: Icons.share, description: 'SHARE', onPressed: () {}),
+    ],
+  );
+}
+
+Widget _addressPart() {
+  return Padding(
+    padding: const EdgeInsets.all(24.0),
+    child: Row(
+      children: [
+        Column(
+          children: [
+            Text(
+              'Oeschinen Lake campground',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+            ),
+            Text(
+              'Kanderstcg, Switzerland',
+              style: TextStyle(color: Colors.grey, fontSize: 14),
+            )
+          ],
+        ),
+        Spacer(),
+        Row(
+          children: [
+            Icon(
+              Icons.star,
+              color: Colors.deepOrangeAccent,
+            ),
+            Text(
+              '41',
+              style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
+            )
+          ],
+        )
+      ],
+    ),
+  );
+}
+
+Widget _showImage() {
+  return Stack(
+      clipBehavior: Clip.none,
+      // this clipbehaviour shows what should happen if widget goes out of boudary
+      children: [
+        Image.network(
+          url,
+          width: double.infinity,
+          height: 250,
+          fit: BoxFit.cover,
+        ),
+        Positioned.fill(
+            // fill the complete parent with its width and height otherwise height is same as child height
+            // left: 10, // this tell the position from the stack edges
+            //   right: 10,
+            //   top: 10,
+            //   bottom: 10,
+
+            child: Center(
+          child: Text(
+            "Kashmir Ki Vadia",
+            style: TextStyle(
+                fontSize: 25, color: Colors.pink, fontWeight: FontWeight.bold),
+            // textAlign: TextAlign.center,
+          ),
+        )),
+        Positioned(
+          right: 10,
+          bottom: -25,
+          left: 10,
+          child: Center(
+            child: IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.favorite,
+                size: 40,
+                color: Colors.pink,
+              ),
+            ),
+          ),
+        )
+      ]);
+}
+
+Widget iconWithDescription(
+    {required IconData iconName,
+    required String description,
+    required Function() onPressed}) {
+  return Column(
+    children: [
+      IconButton(
+        onPressed: onPressed,
+        icon: Icon(
+          iconName,
+          semanticLabel: 'Call',
+          color: Colors.blue,
+          size: 20,
+        ),
+      ),
+      Text(
+        description,
+        style: TextStyle(color: Colors.blue, fontSize: 14),
+      ),
+    ],
+  );
 }
